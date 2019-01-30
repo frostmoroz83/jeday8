@@ -1,0 +1,26 @@
+{
+  "name": "optimizedhtml",
+  "description": "OptimizedHTML 4 - Start HTML Template",
+  "main": "index.js",
+  "authors": [
+    "WebDesign Master"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/frostmoroz83/jeday8",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/libs/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "fotorama": "^4.6.4",
+    "jQuery.mmenu": "mmenu#^7.2.2"
+  },
+  "devDependencies": {
+    "jQuery.mmenu": "mmenu#^7.2.2"
+  }
+}

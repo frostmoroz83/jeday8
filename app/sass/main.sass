@@ -1,44 +1,103 @@
-@import "vars"
 @import "fonts"
 @import "libs"
+@import "vars"
 
-::placeholder
+
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
 	color: #666
-	
+	opacity: 1
 
-::selection
-	background-color: $accent
-	color: #fff
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
 
 body
 	font-size: 16px
 	min-width: 320px
 	position: relative
-	line-height: 1.65
+	line-height: 1.75
 	font-family: $default-font
 	overflow-x: hidden
-	color: $text
-	input, textarea
-		border: #666 1px solid
-		outline: none
-		&:focus:required:invalid
-			border-color: red
-		&:required:valid
-			border-color: green
+	opacity: 1
+	&.ishome
+		.site-header
+			min-height: 700px
+			height: 100vh
+			background-color: $dark
+			color: #fff
+			.top-line
+				padding-top: 40px
+				position: absolute
+				width: 100%
+				z-index: inherit 1
+
+
+.logo
+	img
+		width: 125px
+		height: auto
+		margin-left: 45px
+
+.phone
+	position: absolute
+	right: 85px
+	top: 44px
+	font-family: firasans, sans-serif
+	font-size: 22px
+	white-space: nowrap
+	.fa
+		color: #555555
+		font-size: 22px
+		margin-right: 3px
+
+
+section, header
+	position: relative
+	background-size: cover
+	background-position: center
+
+
+section
+	background-color: #fff
 
 .img-responsive
 	display: block
 	max-width: 100%
 	height: auto
-	&.img-width
-		width: 100%
 
 .text-center
 	text-align: center
 
-b, strong
-	font-weight: bold
+::selection
+	background-color: $accent
+	color: #fff
 
-
-
-@import "media" // Always at the end
+@import "media" // Всегда в конце
