@@ -2,17 +2,6 @@
 @import "libs"
 @import "vars"
 
-
-
-*
-	-webkit-box-sizing: border-box
-	-moz-box-sizing: border-box
-	box-sizing: border-box
-	&:before, &:after
-		-webkit-box-sizing: border-box
-		-moz-box-sizing: border-box
-		box-sizing: border-box
-
 *::-webkit-input-placeholder
 	color: #666
 	opacity: 1
@@ -31,10 +20,8 @@
 
 body input:focus:required:invalid,
 body textarea:focus:required:invalid
-	color: #666
-body input:required:valid,
-body textarea:required:valid
-	color: #666
+	color: rgba(0,0,0,.25)
+	border-color: rgba(0,0,0,.25)
 
 html, body
 	height: 100%
@@ -47,58 +34,403 @@ body
 	font-family: $default-font
 	overflow-x: hidden
 	opacity: 1
+
 	&.ishome
 		.site-header
 			min-height: 700px
 			height: 100vh
-			background-color: $dark
-			color: #fff
+			background-color: #151515
 			.top-line
 				padding-top: 40px
 				position: absolute
 				width: 100%
-				z-index: inherit 1
+				z-index: 1
+
+.main-menu
+	text-align: center
+	font-size: 14px
+	ul
+		list-style-type: none
+		padding: 0
+		margin: 0
+		li
+			display: inline-block
+			position: relative
+			margin-right: -4px
+			&.active, &:hover
+				a
+					background-color: #2c2c2c
+					color: $accent
+					&::before
+						color: $accent
+			&.active
+				a
+					background-color: #323232
+			a
+				color: #979797
+				text-decoration: underline
+				display: block
+				padding: 24px 20px 25px 35px
+				margin-top: -20px
+				margin-bottom: -20px
+				transition: color .25s ease, background-color .5s ease
+				min-height: 75px
+				&::before
+					transition: color .25s ease
+					content: '\f219'
+					font-family: fontawesome
+					margin-right: 8px
+					text-decoration: none
+					font-size: 12px
+					color: #979797
+					position: absolute
+					left: 15px
+					top: 8px
 
 
-.logo
-	img
-		width: 125px
-		height: auto
-		margin-left: 45px
 
-.phone
-	position: absolute
-	right: 85px
-	top: 44px
-	font-family: firasans, sans-serif
-	font-size: 22px
-	white-space: nowrap
-	.fa
-		color: #555555
-		font-size: 22px
-		margin-right: 3px
-
-	
+.type-header
+	background-image: url(../img/bg-2.jpg)
+	background-position: 0 22%
+	text-align: center
+	padding: 40px 0
+	h1, h2
+		font-size: 30px
+		text-transform: uppercase
+		font-weight: 800
+		color: $accent
+		margin: 0
+		span
+			color: #fff
 
 section, header
 	position: relative
 	background-size: cover
 	background-position: center
-
-
-section
 	background-color: #fff
 
-.img-responsive
-	display: block
-	max-width: 100%
-	height: auto
+section
+	h2
+		text-transform: uppercase
+		font-size: 30px
+		font-weight: 800
+	&.inverse
+		color: #fff
+
+h1, h2, h3, h4, h5, h6
+	line-height: 1.4
+	text-transform: uppercase
+	&.h-first
+		color: $accent
+		span
+			color: #fff
+
+.site-header
+	color: #fff
 
 .text-center
 	text-align: center
 
-::selection
-	background-color: $accent
+// Mmenu style
+html.mm-opened
+	overflow-y: scroll !important
+	body
+		background-color: #151515
+.mm-panels > .mm-panel.mm-hasnavbar
+	right: -18px
+.mm-menu.mm-theme-black
+	background-color: #111
+.mm-listview>li:not(.mm-divider):after
+	display: none
+.mm-panels>.mm-panel>.mm-listview:first-child, .mm-panels>.mm-panel>.mm-navbar+.mm-listview
+	margin-top: 0
+.hamburger-box
+	width: 34px
+.hamburger-inner, .hamburger-inner::after, .hamburger-inner::before
+	border-radius: 0
+	background-color: #fff
+	height: 2px
+	width: 34px
+
+
+.mm-listitem_selected >  a,  a:active,  a:hover,  a:link,  a:visited
+	color: $accent
+
+.mm-listitem_selected > .mm-listitem__text
+	background-color: transparent
+	
+	
+
+.mm-panels>.mm-panel:after, .mm-panels>.mm-panel:before
+	height: 0
+.mm-listview>li>a
+	padding:
+		left: 14%
+		right: 14%
+		top: 8px
+		bottom: 8px
+	transition: color .25s ease
+	&:hover
+		color: $accent
+		&::before
+			color: $accent
+	&::before
+		transition: color .25s ease
+		content: '\f219'
+		font-family: fontawesome
+		margin-right: 8px
+		text-decoration: none
+		font-size: 12px
+		color: #fff
+
+.mm-listview>li.active
+	&>a
+		color: $accent
+		&::before
+			color: $accent
+
+.hamburger
+	right: 0
+	top: 34px
+	position: absolute
+
+.mm-navbar
+	height: auto
+	border: none
+	position: relative
+	.mm-navbar__title
+		padding: 0
+		img
+			width: 128px
+			height: auto
+			margin: 5px 0 35px
+
+a
+	color: $accent
+a, button
+	outline: none
+
+.logo
+	img
+		width: 128px
+		height: auto
+		margin-left: 40px
+
+.header-flex
+	display: flex
+	height: 100%
+	position: relative
+	top: 0
+
+.flex-center
+	margin: auto
+
+.header-composition
+	text-align: center
+	position: relative
+	p
+		margin-top: 40px
+	.button
+		margin-top: 25px
+
+.welcome
+	p
+		font-size: 14px
+		font-weight: 300
+		text-transform: uppercase
+		display: flex
+		align-items: center
+		white-space: nowrap
+		margin: 0
+		margin-bottom: -10px
+		span
+			margin: 0 10px
+		&::before, &::after
+			content: ''
+			height: 1px
+			width: 100%
+			position: relative
+			background-color: #fff
+			display: inline-block
+	h1
+		font-weight: 100
+		text-transform: uppercase
+		font-size: 70px
+		margin: 0
+		line-height: 1.6
+		border-bottom: 1px solid #fff
+		white-space: nowrap
+	strong
+		font-weight: 300
+		text-transform: uppercase
+		font-size: 18px
+		margin-top: 25px
+		display: block
+		.fa
+			margin-right: 10px
+			font-size: 12px
+			color: #555
+			&:last-child
+				margin-right: inherit
+				margin-left: 10px
+
+.top
+	position: fixed
+	bottom: 25px
+	background-color: #E0E0E0
+	border-radius: 10em
+	color: #666
+	font-size: 26px
+	width: 50px
+	height: 50px
+	line-height: 50px
+	text-align: center
+	cursor: pointer
+	transition: all .25s ease
+	right: -100px
+	z-index: 12
+	opacity: .5
+	&.active
+		right: 30px
+	i
+		line-height: 0
+	&:hover
+		color: #fff
+		background-color: $accent
+		opacity: 1
+
+.button
+	display: inline-block
+	border: none
 	color: #fff
+	text-decoration: none
+	background-color: $accent
+	padding: 16px 45px
+	font-size: 13px
+	text-transform: uppercase
+	font-weight: 600
+	letter-spacing: 3px
+	border-radius: 2px
+	text-align: center
+	position: relative
+	outline: none
+	transition: background-color .1s ease
+	&::after
+		transition: background-color .2s ease
+		position: absolute
+		content: ''
+		height: 4px
+		bottom: 0
+		width: 100%
+		background-color: darken($accent, 50%)
+		opacity: .18
+		border-bottom-left-radius: 2px
+		border-bottom-right-radius: 2px
+		left: 0
+	&:focus, &:hover
+		text-decoration: none
+		color: #fff
+	&:hover
+		background-color: lighten($accent, 5%)
+		&::after
+			opacity: .22
+	&:active
+		background-color: darken($accent, 5%)
+		&::after
+			opacity: .32
+
+	&.button-white
+		background-color: #fff
+		color: #444
+		&::after
+			background-color: rgba(#000, .6)
+		&:hover
+			&::after
+				background-color: rgba(#000, .2)
+		&:active
+			&::after
+				background-color: rgba(#000, .4)
+
+	&.button-dark
+		background-color: #4d4d4d
+		color: #fff
+		&::after
+			background-color: $accent
+			opacity: 1
+		&:hover
+			background-color: lighten(#4d4d4d, 5)
+		&:active
+			&::after
+				background-color: rgba($accent, .2)
+			background-color: darken(#4d4d4d, 2)
+
+.button-wrap
+	text-align: center
+
+
+.phone
+	position: absolute
+	right: 85px
+	top: 44px
+	font-family: firasans
+	font-size: 20px
+	white-space: nowrap
+	.fa
+		color: #666
+		font-size: 22px
+		margin-right: 3px
+
+.header-social
+	display: flex
+	position: absolute
+	right: 0
+	padding: 0 12.5px
+	height: 100%
+	border-left: rgba(255,255,255,.06) 1px solid
+	top: 0
+
+.soc
+	margin: auto
+	ul,li
+		margin: 0
+		padding: 0
+		list-style-type: none
+	a
+		color: #353535
+		font-size: 16px
+		display: block
+		background-color: rgba(255,255,255,.25)
+		width: 38px
+		height: 38px
+		text-align: center
+		line-height: 38px
+		border-radius: 10em
+		transition: background-color .25s ease
+		margin: 18px 0
+		&:hover
+			background-color: rgba(255,255,255,.4)
+
+.header-contacts
+	position: absolute
+	bottom: 0
+	left: 0
+	border-top: rgba(255,255,255,.06) 1px solid
+	padding: 12.5px
+	width: 100%
+	background-color: rgba(#151515, .15)
+	font-weight: 300
+	font-size: 14px
+	.fa
+		margin-right: 5px
+		color: #555
+	>.container>.row>div:nth-child(2)
+		font-family: firasans
+		text-align: center
+
+
+
+
+//Preloader
+
 
 @import "media" // Всегда в конце
