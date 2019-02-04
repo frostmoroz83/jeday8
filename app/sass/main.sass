@@ -154,7 +154,7 @@ html.mm-opened
 
 
 .mm-listitem_selected >  a,  a:active,  a:hover,  a:link,  a:visited
-	color: $accent
+	// color: $accent
 
 .mm-listitem_selected > .mm-listitem__text
 	background-color: transparent
@@ -397,7 +397,7 @@ a, button
 		list-style-type: none
 	a
 		color: #353535
-		font-size: 16px
+		font-size: 17px
 		display: block
 		background-color: rgba(255,255,255,.25)
 		width: 38px
@@ -414,7 +414,7 @@ a, button
 	position: absolute
 	bottom: 0
 	left: 0
-	border-top: rgba(255,255,255,.06) 1px solid
+	border-top: rgba(255,255,255,.15) 1px solid
 	padding: 12.5px
 	width: 100%
 	background-color: rgba(#151515, .15)
@@ -427,7 +427,10 @@ a, button
 		font-family: firasans
 		text-align: center
 
-
+$colors: $blue, $red, $accent
+@for $i from 1 through length($colors)
+	.carousel-services .owl-item:nth-child(#{length($colors)}n+#{$i})
+		background-color: nth($colors, $i)
 
 
 //Preloader
