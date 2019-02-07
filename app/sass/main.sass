@@ -25,6 +25,7 @@ body textarea:focus:required:invalid
 
 html, body
 	height: 100%
+	background-color: rgba($dark, .6)
 
 body
 	font-size: 16px
@@ -108,12 +109,20 @@ section, header
 	background-size: cover
 	background-position: center
 	background-color: #fff
+	&.inverse
+		color: #ffffff
+		background-color: $dark
+		&.s-call
+			background-color: #fff
 
 section
-	h2
+	.h2
 		text-transform: uppercase
 		font-size: 30px
 		font-weight: 800
+		color: $accent
+		span
+			color: #ffffff
 	&.inverse
 		color: #fff
 
@@ -427,11 +436,207 @@ a, button
 		font-family: firasans
 		text-align: center
 
-	
+//carousel
+
+
 $colors: $blue, $red, $accent
 @for $i from 1 through length($colors)
 	.carousel-services .owl-item:nth-child(#{length($colors)}n+#{$i})
 		background-color: nth($colors, $i)
+
+.carousel-services
+	background-color: $dark
+
+	&-item
+		color: #ffffff
+		font-size: 18px
+		font-weight: 300
+		position: relative
+		display: flex
+		flex-direction: column-reverse
+		&:hover
+			.carousel-services-image
+				opacity: 1
+		.carousel-logo
+			text-align: center
+			img
+				width: 100px
+				height: auto
+				display: inline-block
+
+	.owl-item
+		&:nth-child(2n+2)
+			.carousel-services-item
+				flex-direction: column
+	&-image
+
+		background-size: cover
+		background-position: center
+		opacity: .7
+		transition: opacity .5s ease
+	&-content
+		position: relative
+		padding: 60px 15%
+
+	&-composition
+		margin: auto
+		text-align: center
+		width: 100%
+		.h3
+			font-weight: 800
+			font-size: 28px
+			margin-top: 5px
+			margin-bottom: 20px
+			span
+				font-weight: normal
+				font-size: 18px
+				font-weight: 300
+				display: block
+	&-list
+		margin: 0
+		padding: 0
+		list-style-type: none
+		margin-bottom: 25px
+		li 
+			padding: 9px
+			border-bottom: 1px solid rgba(#000, .12)
+			&:last-child
+				border-bottom: none
+			strong
+				font-family: firasans, sans-serif
+				color: #4a4a4a
+			.fa
+				font-size: 14px
+	.owl-nav
+		position: absolute
+		top: 0
+		width: 100%
+		> div
+			width: 63.5px
+			height: 63.5px
+			background-color: #fff
+			color: $dark
+			position: absolute
+			text-align: center
+			line-height: 64px
+			font-size: 26px
+			&.owl-prev
+					left: 0
+			&.owl-next
+					right: 0
+	.owl-dots
+		display: none
+
+
+
+.owl-carousel
+	.owl-item
+		backface-visibility: inherit
+
+
+
+.s
+	&-king, &-review, &-partners
+		padding: 5% 0
+
+	&-king
+		p
+			margin: 30px 0
+			font-size: 18px
+
+	&-call
+		background-size: contain
+		background-repeat: no-repeat
+		background-position: 25%
+		&::before
+			content: ''
+			width: 50%
+			right: 0
+			height: 100%
+			position: absolute
+			background-color: rgba($accent, .92)
+
+
+
+.section-overley
+	&::before
+		content: ''
+		position: absolute
+		width: 100%
+		height: 100%
+		top: 0
+		left: 0
+		background-color: $over
+		opacity: .92
+
+
+	
+//fotorama
+.fotorama
+	background-color: rgba(#151515, .4)
+.fotorama__nav
+	&-wrap
+		bottom: 15px
+		position: absolute
+		padding: 0 30px
+		width: 100%
+.fotorama__thumb
+	border: 4px #fff solid
+	transition: border-color .5s ease
+	&-border
+		display: none
+		border-color: #3d3c3c
+
+.fotorama__active
+	.fotorama__thumb
+		border-color: #3d3c3c
+
+.fotorama__nav:before
+	left: 0
+.fotorama__nav.fotorama__shadows--right:after, .fotorama__stage.fotorama__shadows--right:after
+	right: -1px
+.fotorama__arr
+	background: none
+.fotorama__arr-
+	&-next, &-prev
+		&::before
+			font-family: fontawesome
+			font-size: 32px
+	&-next
+		&::before
+			content: '\f105'
+	&-prev
+		left: 25px
+		&::before
+			content: '\f104'
+
+input, textarea, select
+	background-color: transparent
+	border: rgba(#000, .1) 1px solid
+	border-bottom: rgba(#000, .1) 2px solid
+
+
+.success
+	display: none
+
+.callback
+	padding: 25% 0
+	position: relative
+
+	&-logo
+		img
+			width: 100px
+			height: auto
+	
+	.formhead
+		margin: 0
+		font-size: 30px
+		color: #ffffff
+
+
+	p
+		margin-top: 0
+
 
 
 //Preloader

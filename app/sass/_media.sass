@@ -10,12 +10,24 @@
 	.header-contacts
 		font-size: 14px
 
+	.carousel-services-item
+		flex-direction: column
+
+	.s
+		&-king, &-review, &-partners
+			padding: 10% 0
+
+
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
 	.welcome
 		.h1
 			font-size: 47px
+
+	.s
+		&-king, &-review, &-partners
+			padding: auto 0
 
 
 /* Small Devices, Tablets */
@@ -54,7 +66,24 @@
 				font-size: 14px
 	p
 		font-size: 14px
+
+	.s
+		&-king, &-review, &-partners
+			.fotorama__nav-wrap
+				display: none
 				
+
+//carousel
+.carousel
+	&-services
+		&-composition
+			.h3
+				font-size: 22px
+		&-list
+			li 
+				font-size: 12px
+
+
 
 
 
