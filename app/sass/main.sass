@@ -18,10 +18,7 @@
 	color: #666
 	opacity: 1
 
-body input:focus:required:invalid,
-body textarea:focus:required:invalid
-	color: rgba(0,0,0,.25)
-	border-color: rgba(0,0,0,.25)
+
 
 html, body
 	height: 100%
@@ -547,7 +544,7 @@ $colors: $blue, $red, $accent
 	&-call
 		background-size: contain
 		background-repeat: no-repeat
-		background-position: 25%
+		background-position: 10%
 		&::before
 			content: ''
 			width: 50%
@@ -614,15 +611,22 @@ input, textarea, select
 	background-color: transparent
 	border: rgba(#000, .1) 1px solid
 	border-bottom: rgba(#000, .1) 2px solid
+	border-radius: 2px
+	padding: 8px 22px
+	outline: none
+	display: block
+	font-size: 16px
+	color: #333333
+select
+	padding: 10px 22px
 
 
-.success
-	display: none
+
+
 
 .callback
-	padding: 25% 0
+	padding: 10% 0
 	position: relative
-
 	&-logo
 		img
 			width: 100px
@@ -632,12 +636,44 @@ input, textarea, select
 		margin: 0
 		font-size: 30px
 		color: #ffffff
-
-
 	p
 		margin-top: 0
+	input, textarea, select
+		color: #ffffff
+		width: 50%
+		margin-top: 15px
+		&::-webkit-input-placeholder
+			color: #ffffff
+			opacity: 1
+		&::-moz-placeholder
+			color: #ffffff
+			opacity: 1
+		&::-ms-input-placeholder
+			color: #ffffff
+		option
+			color: #333333
+	.button
+		margin-top: 40px
 
-
+.success
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	text-transform: uppercase
+	font-weight: bold
+	display: flex
+	z-index: 10
+	display: none
+	span
+		margin: auto
+	& ~ *
+		transition: all .5s ease
+	&.active
+		& ~ *
+			opacity: .5
+			filter: blur(10px)
 
 //Preloader
 

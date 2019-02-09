@@ -29,6 +29,17 @@
 		&-king, &-review, &-partners
 			padding: auto 0
 
+	.callback
+		padding: 5% 0
+
+	.s-call::before
+		content: ''
+		width: 70%
+		right: 0
+		height: 100%
+		position: absolute
+		background-color: rgba($accent, .92)
+
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
@@ -44,12 +55,75 @@
 				margin-top: 14px
 				font-size: 12px
 	p
-		font-size: 12px
+		font-size: 14px
 	.header-contacts>.container>.row>div:nth-child(2)
 		text-align: left
 	.button
 		padding: 12px 36px
 
+	.s-call
+		.row
+				margin-right: 0
+
+	.s-call::before
+		content: ''
+		width: 100%
+		right: 0
+		height: 100%
+		position: absolute
+		background-color: rgba($accent, .92)
+
+	.callback
+		padding: 0%
+		position: relative
+		margin-left: 20%
+
+		&-logo
+			img
+				width: 100px
+				height: auto
+				margin-top: 5px
+	
+		.formhead
+			margin: 0
+			font-size: 18px
+			color: #ffffff
+
+
+		input, textarea, select
+			color: #ffffff
+			width: 90%
+			// height: 14px
+			margin-top: 5px
+			font-size: 14px
+			font-family: $default-font
+			font-weight: 300
+
+			&::-webkit-input-placeholder
+				color: #ffffff
+				opacity: 1
+				// font-size: 12px
+			&::-moz-placeholder
+				color: #ffffff
+				opacity: 1
+				font-size: 12px
+			&::-ms-input-placeholder
+				color: #ffffff
+				font-size: 12px
+
+
+			option
+				color: #333333
+				font-size: 12px
+				
+
+		.button
+			margin-top: 10px
+			margin-left: 25% 
+			margin-bottom: 10px
+			padding: 6px 16px
+			font-size: 12px
+			letter-spacing: 2px
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
@@ -71,6 +145,10 @@
 		&-king, &-review, &-partners
 			.fotorama__nav-wrap
 				display: none
+
+	.callback
+		input, textarea, select
+			width: 100%
 				
 
 //carousel
