@@ -555,7 +555,7 @@ $colors: $blue, $red, $accent
 
 
 
-.section-overley
+.section-overlay
 	&::before
 		content: ''
 		position: absolute
@@ -607,21 +607,56 @@ $colors: $blue, $red, $accent
 		&::before
 			content: '\f104'
 
-input, textarea, select
+input, textarea, select,
+.selectize-control.single .selectize-input,
+.selectize-control.single .selectize-input.input-active
+	width: 50%
 	background-color: transparent
-	border: rgba(#000, .1) 1px solid
-	border-bottom: rgba(#000, .1) 2px solid
+	border: rgba(0,0,0,.1) 1px solid
+	border-bottom: rgba(0,0,0,.1) 2px solid
 	border-radius: 2px
 	padding: 8px 22px
 	outline: none
-	display: block
+	color: #333
+	display: inline-block
+	font-weight: 300
 	font-size: 16px
-	color: #333333
 select
-	padding: 10px 22px
+	padding: 11px 22px
+	
+.selectize-control .selectize-input
+	box-shadow: none
+	overflow: inherit
+	line-height: inherit
+	text-align: left
+	input
+		font-size: 16px
+	&.dropdown-active::before
+		background-color: transparent
 
 
+.selectize-control.single
+	.selectize-input, &.dropdown-active
+		&::after
+			border: none
+			content: '\f107'
+			font-family: fontawesome
+			position: absolute
+			right: 30px
+			top: 12px
+		&.dropdown-active::after
+			content: '\f106'
 
+	.selectize-dropdown
+		font-size: 15px
+		border: none
+		border-radius: 0
+		text-align: left
+		&-content
+			.option
+				padding: 10px 22px
+				&.active
+					background-color: lighten($accent, 15)
 
 
 .callback
@@ -638,7 +673,9 @@ select
 		color: #ffffff
 	p
 		margin-top: 0
-	input, textarea, select
+	input, textarea, select,
+	.selectize-control.single .selectize-input,
+	.selectize-control.single .selectize-input.input-active
 		color: #ffffff
 		width: 50%
 		margin-top: 15px
@@ -653,7 +690,8 @@ select
 		option
 			color: #333333
 	.button
-		margin-top: 40px
+		margin-top: 20px
+		display: block
 
 .success
 	position: absolute
@@ -663,7 +701,7 @@ select
 	bottom: 0
 	text-transform: uppercase
 	font-weight: bold
-	display: flex
+	// display: flex
 	z-index: 10
 	display: none
 	span
@@ -674,6 +712,9 @@ select
 		& ~ *
 			opacity: .5
 			filter: blur(10px)
+
+
+
 
 //Preloader
 
