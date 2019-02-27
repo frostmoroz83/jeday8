@@ -1,12 +1,12 @@
 {
-  "name": "optimizedhtml",
+  "name": "s-miller",
   "version": "4.0.0",
-  "description": "OptimizedHTML 4 - Start HTML Template",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "WebDesign Master",
+  "author": "Morozov Alexander",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.26.3",
